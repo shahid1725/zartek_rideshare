@@ -14,22 +14,26 @@ API endpoint for drivers to accept ride requests.
 
 Installation and Setup
 
-1. Clone the repository
-  git clone https://github.com/shahid1725/zartek_rideshare.git
-  cd ride_share
+  Clone the repository:
 
-2. Install dependencies:
-   pip install -r requirements.txt
+    git clone https://github.com/shahid1725/zartek_rideshare.git
+    cd ride_share
 
-3. Apply migrations:
-   python manage.py migrate
+  Install dependencies:
 
-4. Start the development server:
-   python manage.py runserver
+    pip install -r requirements.txt
 
-5.Access the API endpoints using the provided URLs
+  Apply migrations:
 
-  API Endpoints
+    python manage.py migrate
+
+  Start the development server:
+
+    python manage.py runserver
+
+  Access the API endpoints using the provided URLs
+  API Endpoints:
+  
     Driver Registration: POST /api/driver/register/
     List Drivers: GET /api/drivers/
     Update Driver Profile: PUT /api/drivers/<int:pk>/
