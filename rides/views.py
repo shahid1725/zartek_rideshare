@@ -4,6 +4,8 @@ from rest_framework.response import Response
 from rest_framework.decorators import api_view
 from .serializers import *
 
+
+#-----------------------------------------DRIVER---------------------------------------------
 @api_view(['POST'])
 def driver_register(request):
     if request.method == 'POST':
@@ -28,6 +30,8 @@ class DriverUpdateAPIView(generics.UpdateAPIView):
         self.perform_update(serializer)
         return Response(serializer.data)
 
+#----------------------------------------------RIDER----------------------------------------
+
 @api_view(['POST'])
 def rider_register(request):
     if request.method == 'POST':
@@ -41,7 +45,7 @@ class RiderListAPIView(generics.ListAPIView):
     queryset = Rider.objects.all()
     serializer_class = RiderSerializer
 
-#--------------------------------------------------------------------------------------
+#-----------------------------------------------RIDE---------------------------------------
 
 # views.py
 from rest_framework import status

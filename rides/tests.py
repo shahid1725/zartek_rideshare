@@ -13,19 +13,17 @@ class RideTests(TestCase):
         self.client = APIClient()
         self.driver_user = User.objects.create_user(username='driver', password='testpass', is_driver=True)
         self.rider_user = User.objects.create_user(username='rider', password='testpass', is_rider=True)
-        self.ride = Ride.objects.create(rider=self.rider_user, driver=self.driver_user, rider_id=self.rider_user.id, pickup_location='Location A', dropoff_location='Location B')
 
     def test_create_ride(self):
         url = reverse('ride-list')
         data = {
-            'rider': self.rider_user.id,
+            'rider': self.rider_user.id,  # Provide rider ID
             'driver': self.driver_user.id,
             'pickup_location': 'Location C',
             'dropoff_location': 'Location D'
         }
         response = self.client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
 
 
 class RideModelTestCase(TestCase):
