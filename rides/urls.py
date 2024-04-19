@@ -7,6 +7,7 @@ urlpatterns = [
     path('drivers/', views.DriverListAPIView.as_view(), name='driver-list'),
     path('drivers/<int:pk>/', views.DriverUpdateAPIView.as_view(), name='driver-update'),
     path('rider/register/', views.rider_register, name='rider_register'),
+    path('riders/', views.RiderListAPIView.as_view(), name='rider-list'),
 
     path('ride/create/', views.create_ride_request, name='create_ride'),
     path('rides/', views.get_rides, name='get_rides'),

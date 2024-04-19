@@ -37,6 +37,9 @@ def rider_register(request):
             return Response(serializer.data, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
+class RiderListAPIView(generics.ListAPIView):
+    queryset = Rider.objects.all()
+    serializer_class = RiderSerializer
 
 #--------------------------------------------------------------------------------------
 
